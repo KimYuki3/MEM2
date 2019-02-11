@@ -15,13 +15,15 @@ class MemoDetailScreen extends React.Component {
 
         <View style={styles.memoContents}>
           <Text style={styles.memoContentsStyle}>
-          これからのイメージ戦略について
-          これは本文です。
-          マークダウンでもかけます。
-
+          これからのイメージ戦略について{"\n"}
+          これは本文です。{"\n"}
+          マークダウンでもかけます。{"\n"}
+          {`  でもこれでもいけます。
+      ほとんど日本語です。`}
           </Text>
         </View>
-        <AddButton style={styles.pencil}>+</AddButton>
+        <AddButton name ="pencil" color = "black" style={styles.pencil}/>
+
       </View>
     );
   }

@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+
 class AppBar extends React.Component {
+
   render() {
     return (
       <View style={styles.appbar}>

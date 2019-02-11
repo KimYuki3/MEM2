@@ -1,24 +1,51 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import { Font } from 'expo';
+import fontAwsome from '../../assets/fonts/fa-solid-900.ttf';
+import { createIconSet } from '@expo/vector-icons';
+
+
+const CustomIcon = createIconSet({
+pencil: '\uf303',
+plus: '\uf067',
+}, 'FontAwsome');
+
 class AddButton extends React.Component {
+  state = {
+    fontLoaded: false,
+  }
+  async componentWillMount() {
+    await Font.loadAsync({
+      FontAwsome: fontAwsome,
+    });
+    this.setState ({fontLoaded: true});
+  }
+
+
+
   render() {
-    const {style, color } = this.props;
-    let bgColor = '#de4';
-    let textColor = '#fff';
+    const {name, style, color } = this.props;
+    let bgColor = '#fff';
+    let textColor = '#e3e';
     if (color === 'white'){
       bgColor = '#fff';
-      textColor = '#de4';
+      textColor = '#e3e';
     };
     return (
-      <View style={[styles.MemoaddButton,style,{backgroundColor:bgColor}]}>
-        <Text style={[styles.Buttonstyle,{color:textColor}]}>
-          {this.props.children}
-        </Text>
+      <View style={[styles.MemoaddButton, style, { backgroundColor:bgColor}]}>
+      {
+        this.state.fontLoaded ? (
+          <CustomIcon name={name} style = {
+            [styles.Buttonstyle, { color: textColor }]
+          }/>
+        ) : null
+      }
       </View>
 
     );
   }
 }
+
 
 const styles = StyleSheet.create({
 
@@ -42,7 +69,8 @@ const styles = StyleSheet.create({
 
   },
   Buttonstyle: {
-    fontSize: 30,
+    fontFamily:'FontAwsome',
+    fontSize: 24,
     lineHeight: 30,
   },
 });

@@ -9,7 +9,8 @@ class MemoListScreen extends React.Component {
     return (
       <View style={styles.container1}>
         <MemoList/>
-        <AddButton>++</AddButton>
+        <AddButton name ='pencil'/>
+
       </View>
     );
   }
