@@ -22,7 +22,7 @@ class MemoDetailScreen extends React.Component {
       ほとんど日本語です。`}
           </Text>
         </View>
-        <AddButton name ="pencil" color = "black" style={styles.pencil}/>
+        <AddButton name ="question" color = "black" style={styles.pencil}/>
 
       </View>
     );

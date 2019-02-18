@@ -8,6 +8,8 @@ import { createIconSet } from '@expo/vector-icons';
 const CustomIcon = createIconSet({
 pencil: '\uf303',
 plus: '\uf067',
+check:'\uf00c',
+question:'\uf128',
 }, 'FontAwsome');
 
 class AddButton extends React.Component {
