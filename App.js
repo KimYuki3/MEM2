@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import MemoEditScreen from './src/screens/MemoEditScreen.js';
+import LoginScreen from './src/screens/LoginScreen.js';
 import AppBar from './src/components/AppBar.js';
 
 export default class App extends React.Component {
@@ -8,7 +8,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <AppBar />
-        <MemoEditScreen />
+        <LoginScreen />
 
       </View>
     );
